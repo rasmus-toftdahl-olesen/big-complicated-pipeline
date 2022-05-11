@@ -73,11 +73,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: part_a
+          path: part_a
 
       - name: Download a Part B artifact
         uses: actions/download-artifact@v3
         with:
           name: part_b
+          path: part_b
 
       - name: Build
         run: image/build.sh
@@ -88,4 +90,3 @@ jobs:
           name: image
           path: image/out.txt
           if-no-files-found: error
-          
