@@ -79,7 +79,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: part_b
-          path: part_b
+          path: part_
 
       - name: Build
         run: image/build.sh
@@ -88,5 +88,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: image
-          path: image/out.txt
+          path: out.txt
           if-no-files-found: error
