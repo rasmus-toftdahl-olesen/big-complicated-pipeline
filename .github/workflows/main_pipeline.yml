@@ -113,9 +113,9 @@ jobs:
       - name: Build
         run: variants/build.sh image/out.txt ${{ matrix.VARIANT }}
 
-      - name: Archive Mario Variant
+      - name: Archive ${{ matrix.VARIANT }} Variant
         uses: actions/upload-artifact@v3
         with:
-          name: mario
-          path: Mario.tar
+          name: ${{ matrix.VARIANT }}
+          path: ${{ matrix.VARIANT }}.tar
           if-no-files-found: error
