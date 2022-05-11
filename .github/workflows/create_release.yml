@@ -1,0 +1,35 @@
+# This pipeline is used to create a new release
+
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      from:
+        description: The branch to branch from (defaults to main)
+        default: main
+        required: true
+        type: string
+
+      to:
+        description: The branch to create
+        required: true
+        type: string
+
+      owner:
+        description: The owner of the release (your initials)
+        default: $USERNAME
+        required: true
+        type: string
+
+jobs:
+  Create_Branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Branch
+        run: echo Will create branch ${{ input.to }} from ${{ input.from }}
+
+      - name: Set Owner
+        run: echo Setting owner to ${{ input.owner }}
+          
