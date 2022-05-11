@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: ${{ matrix.TEST_FEATURE }}
+      - name: ${{ TEST_TEAM }} ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TYPE }}
         run: |
           cd part_b/tests
           ./other_tests.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
