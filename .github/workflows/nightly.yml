@@ -24,7 +24,7 @@ jobs:
       - name: ${{ matrix.TEST_FEATURE }}
         run: |
           cd part_a/tests
-          ./run.sh ${{ matrix.TEST_FEATURE }} nightly | tee log.txt
+          ./run.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
@@ -37,7 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        TEST_TEAM: [TeamAlpha, TeamBravo, TeamTango]
         TEST_FEATURE: [FeatureA, FeatureB, FeatureF, FeatureX, FeatureY, FeatureZ]
+        TEST_TYPE: [Type1, Type2, Type3]
 
     steps:
       - uses: actions/checkout@v3
@@ -45,7 +47,7 @@ jobs:
       - name: ${{ matrix.TEST_FEATURE }}
         run: |
           cd part_b/tests
-          ./run.sh ${{ matrix.TEST_FEATURE }} nightly | tee log.txt
+          ./other_tests.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
