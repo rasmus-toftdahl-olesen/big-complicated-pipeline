@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         TEST_FEATURE: [FeatureA, FeatureB, FeatureC, FeatureD, FeatureE, FeatureF]
+    name: ${{ matrix.TEST_FEATURE }}
 
     steps:
       - uses: actions/checkout@v3
