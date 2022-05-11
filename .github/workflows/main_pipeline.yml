@@ -111,7 +111,9 @@ jobs:
           path: image
 
       - name: Build
-        run: variants/build.sh image/out.txt {{ matrix.VARIANT }}
+        env:
+          VARIANT: {{ matrix.VARIANT }}
+        run: variants/build.sh image/out.txt $VARIANT
 
       - name: Archive Mario Variant
         uses: actions/upload-artifact@v3
