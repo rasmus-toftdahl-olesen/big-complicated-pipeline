@@ -97,7 +97,7 @@ jobs:
     needs: [image]
     strategy:
       matrix:
-        VARIANT = [Mario, Luigi, Peach, Toad]
+        VARIANT: [Mario, Luigi, Peach, Toad]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
