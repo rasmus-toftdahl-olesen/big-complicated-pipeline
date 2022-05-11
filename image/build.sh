@@ -1,4 +1,7 @@
 
+echo Workspace
+find
+echo ------------------
 echo Combining part A and part B
 echo Part A >> out.txt
 echo ------------------ >> out.txt
