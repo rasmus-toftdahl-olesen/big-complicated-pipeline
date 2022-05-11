@@ -26,7 +26,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build
-        run: part_a/build.sh
+        run: |
+          cd part_a
+          ./build.sh
 
       - name: Archive Part A
         uses: actions/upload-artifact@v3
@@ -45,7 +47,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build
-        run: part_b/build.sh
+        run: |
+          cd part_b
+          ./build.sh
 
       - name: Archive Part B
         uses: actions/upload-artifact@v3
