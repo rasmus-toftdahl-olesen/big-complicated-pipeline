@@ -79,7 +79,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: part_b
-          path: part_
+          path: part_b
 
       - name: Build
         run: image/build.sh
@@ -114,5 +114,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mario
-          path: Mario
+          path: Mario.tar
           if-no-files-found: error
