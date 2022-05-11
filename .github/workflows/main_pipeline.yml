@@ -35,6 +35,7 @@ jobs:
         with:
           name: part_a
           path: part_a/out.txt
+          if-no-files-found: error
 
   build_part_b:
     # The type of runner that the job will run on
@@ -56,6 +57,7 @@ jobs:
         with:
           name: part_b
           path: part_b/out.txt
+          if-no-files-found: error
 
   image:
     # The type of runner that the job will run on
@@ -85,3 +87,5 @@ jobs:
         with:
           name: image
           path: image/out.txt
+          if-no-files-found: error
+          
