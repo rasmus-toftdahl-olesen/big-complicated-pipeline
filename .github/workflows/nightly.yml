@@ -61,11 +61,9 @@ jobs:
     steps:
       - name: Generate test report
         run: echo Generating report >> report.html
-            - name: Archive log
       - name: Archive test report
         uses: actions/upload-artifact@v3
         with:
           name: report
           path: report.html
           if-no-files-found: error
-          
