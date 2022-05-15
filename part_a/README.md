@@ -11,7 +11,7 @@ The output will be stored in a file called out.txt
 
 Part A is tested by running the tests/run.sh script - it should be called from the part_a directory, and expects to read the artifact to test from the file called out.txt in the part_a directory (where the build.sh script places it).
 
-To tests/run.sh script takes two arguments, the first is whether to run the sanity or release tests - this is selected by passing "sanity" or "release" - and the second argument is the group of tests to run - currently the following groups are defined:
+To tests/run.sh script takes two arguments, the first argument is the group of tests to run - currently the following groups are defined:
 * A1
 * A2
 * A3
@@ -19,3 +19,4 @@ To tests/run.sh script takes two arguments, the first is whether to run the sani
 * A5
 * A6
 * A7
+The second argument is whether to run the sanity or release tests - this is selected by passing "sanity" or "release".
