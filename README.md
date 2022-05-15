@@ -82,10 +82,10 @@ It is also important to say that for some of the variants, re-using one or more 
 ## Repo structure
 
 The repo is branched at the top, for the four main parts:
-* part_a
-* part_b
-* image
-* variants
+* [part_a](part_a)
+* [part_b](part_b)
+* [image](image)
+* [variants](variants)
 
 For each of these main parts, there is a way to build the part - and test them.
 
