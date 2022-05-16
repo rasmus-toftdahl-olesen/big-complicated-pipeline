@@ -1,8 +1,8 @@
 To compile the Image, run the build.sh script:
 
-´´´
+```
 build.sh
-´´´
+```
 
 This should be called from the image directory and will produce the out.txt artifact - it uses the part_a/out.txt and part_b/out.txt artifacts as input.
 
@@ -24,10 +24,15 @@ Each feature can be tested using three different test types:
 * Type2
 * Type3
 
-The tests are started by running the tests/test.sh script with these arguments:
+The tests are started by running the tests/test.sh script in the image directory with these arguments:
 
 * TEST_TEAM (Alpha, Bravo or Tango)
 * TEST_FEATURE (FeatureA ... FeatureZ)
 * TEST_TYPE (Type1, Type2 or Type3)
 * TEST_GROUP (sanity or release)
 
+For instance
+
+```
+tests/test.sh Bravo FeatureC Type2 release
+```
