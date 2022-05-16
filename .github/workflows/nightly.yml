@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        TEST_FEATURE: [A1, A2, A3, A4, A5, A6, A7]
+        TEST_FEATURE: [FeatureA, FeatureB, FeatureC, FeatureD, FeatureE, FeatureF]
 
     steps:
       - uses: actions/checkout@v3
@@ -39,6 +39,29 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        TEST_FEATURE: [FeatureC, FeatureD, FeatureE, FeatureF, FeatureX, FeatureY, FeatureZ]
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: ${{ matrix.TEST_FEATURE }}
+        run: |
+          cd part_b
+          ./tests/run.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
+
+      - name: Archive log
+        uses: actions/upload-artifact@v3
+        with:
+          name: log
+          path: log.txt
+          if-no-files-found: error
+  
+  Image_Tests:
+    name: Image Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
         TEST_TEAM: [TeamAlpha, TeamBravo, TeamTango]
         TEST_FEATURE: [FeatureA, FeatureB, FeatureF, FeatureX, FeatureY, FeatureZ]
         TEST_TYPE: [Type1, Type2, Type3]
@@ -48,8 +71,8 @@ jobs:
 
       - name: ${{ TEST_TEAM }} ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TYPE }}
         run: |
-          cd part_b/tests
-          ./other_tests.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
+          cd image
+          ./tests/test.sh ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_TYPE }} nightly | tee ../../log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
@@ -57,8 +80,7 @@ jobs:
           name: log
           path: log.txt
           if-no-files-found: error
-
-
+  
   Test_Report:
     name: Test Report
     runs-on: ubuntu-latest
