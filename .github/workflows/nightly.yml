@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: log
-          path: part_a_/log.txt
+          path: part_a/log.txt
           if-no-files-found: error
 
   Part_B_Tests:
@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: log
-          path: path_b/log.txt
+          path: part_b/log.txt
           if-no-files-found: error
   
   Image_Tests:
