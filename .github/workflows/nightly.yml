@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        TEST_FEATURE: [FeatureA, FeatureB, FeatureC, FeatureD, FeatureE, FeatureF]
+        TEST_FEATURE: [A1, A2, A3, A4, A5, A6, A7]
 
     steps:
       - uses: actions/checkout@v3
