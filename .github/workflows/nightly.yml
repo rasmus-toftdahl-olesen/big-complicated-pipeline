@@ -24,8 +24,8 @@ jobs:
 
       - name: ${{ matrix.TEST_FEATURE }}
         run: |
-          cd part_a/tests
-          ./run.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
+          cd part_a
+          ./tests/run.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
