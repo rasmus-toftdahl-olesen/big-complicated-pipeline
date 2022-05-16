@@ -69,7 +69,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: ${{ TEST_TEAM }} ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TYPE }}
+      - name: ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TYPE }}
         run: |
           cd image
           ./tests/test.sh ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_TYPE }} nightly | tee ../../log.txt
