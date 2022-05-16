@@ -19,6 +19,8 @@ Image --> Peach[Peach Variant]
 Image --> Toad[Toad Variant]
 ```
 
+## Tests
+
 For each of these levels (Part A, Part B, Image, Variants) - a suite of tests are available - "sanity" tests - that are supposed to run through-out the day to validate commits to that part of the repo - and "release" tests - that are supposed to run nightly for all parts - for the same git sha to get an overview of what a release done at that particular git sha would look like.
 
 ```mermaid
