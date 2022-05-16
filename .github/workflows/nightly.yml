@@ -25,13 +25,13 @@ jobs:
       - name: ${{ matrix.TEST_FEATURE }}
         run: |
           cd part_a
-          ./tests/run.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
+          ./tests/run.sh ${{ matrix.TEST_FEATURE }} nightly | tee log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
         with:
           name: log
-          path: log.txt
+          path: part_a_/log.txt
           if-no-files-found: error
 
   Part_B_Tests:
@@ -47,13 +47,13 @@ jobs:
       - name: ${{ matrix.TEST_FEATURE }}
         run: |
           cd part_b
-          ./tests/other_tests.sh ${{ matrix.TEST_FEATURE }} nightly | tee ../../log.txt
+          ./tests/other_tests.sh ${{ matrix.TEST_FEATURE }} nightly | tee log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
         with:
           name: log
-          path: log.txt
+          path: path_b/log.txt
           if-no-files-found: error
   
   Image_Tests:
@@ -72,13 +72,13 @@ jobs:
       - name: ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TYPE }}
         run: |
           cd image
-          ./tests/test.sh ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_TYPE }} nightly | tee ../../log.txt
+          ./tests/test.sh ${{ matrix.TEST_FEATURE }} ${{ matrix.TEST_TEAM }} ${{ matrix.TEST_TYPE }} nightly | tee log.txt
 
       - name: Archive log
         uses: actions/upload-artifact@v3
         with:
           name: log
-          path: log.txt
+          path: image/log.txt
           if-no-files-found: error
   
   Test_Report:
